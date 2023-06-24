@@ -1,8 +1,25 @@
 <template>
-  <div class="container regist-member justify-content-center align-content-center">
-    <Form @submit="handleSubmit" id="frm_register w-100"  :validation-schema="schema" v-slot="{ errors }">
+  <section class="content-header mr-3 ml-3">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Contact us</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Contact us</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+  <div class="c-member" style="background-color: white">
+    <div class="container mx-2">
+
+    <Form @submit="handleSubmit" id="frm_register w-100" :validation-schema="schema" v-slot="{ errors }">
       <div class="row">
-        <div class="col-6">
+        <div class="col-12 mt-3 mr-3 ml-3">
           <div class="input">
             <label for="username">Username <span class="text-danger">*</span></label>
             <Field
@@ -13,7 +30,7 @@
                 :class="{ 'is-invalid': errors.username }"
                 placeholder="Username"
             />
-            <div class="invalid-feedback"><span class="text-danger">{{errors.username}}</span></div>
+            <div class="invalid-feedback"><span class="text-danger">{{ errors.username }}</span></div>
           </div>
           <div class="input">
             <label for="email">Email address <span class="text-danger">*</span></label>
@@ -25,7 +42,7 @@
                 :class="{ 'is-invalid': errors.email}"
                 placeholder="email@adress.com"
             />
-            <div class="invalid-feedback"><span class="text-danger">{{errors.email}}</span></div>
+            <div class="invalid-feedback"><span class="text-danger">{{ errors.email }}</span></div>
           </div>
           <div class="input">
             <label for="address">Address</label>
@@ -36,11 +53,10 @@
                    :class="{ 'is-invalid': errors.address}"
                    placeholder="Address"
             />
-            <div class="invalid-feedback"><span class="text-danger">{{errors.address}}</span></div>
+            <div class="invalid-feedback"><span class="text-danger">{{ errors.address }}</span></div>
           </div>
-        </div>
 
-        <div class="col-6">
+
           <div class="input">
             <label for="phone">Phone <span class="text-danger">*</span></label>
             <Field class="form-control"
@@ -63,7 +79,7 @@
                 :class="{ 'is-invalid': errors.password}"
                 placeholder="password123"
             />
-            <div class="invalid-feedback"><span class="text-danger">{{errors.password}}</span></div>
+            <div class="invalid-feedback"><span class="text-danger">{{ errors.password }}</span></div>
           </div>
 
           <div class="input">
@@ -75,31 +91,33 @@
                    :class="{ 'is-invalid': errors.confirmPassword}"
                    placeholder="Password Confirm"
             />
-            <div class="invalid-feedback"><span class="text-danger">{{errors.confirmPassword}}</span></div>
+            <div class="invalid-feedback"><span class="text-danger">{{ errors.confirmPassword }}</span></div>
           </div>
-        </div>
 
-        <div class="row justify-content-center">
-          <div class="col-3">
-            <button type="submit" id="btn-regist" class="mt-4 btn btn-primary">Register</button>
-            <button type="submit" id="btn-cancel" class="mt-4 btn btn-default">Cancel</button>
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <button type="submit" id="btn-regist" class="mt-4 btn btn-primary">Register</button>
+              <button type="submit" id="btn-cancel" class="mt-4 btn btn-default">Cancel</button>
+            </div>
           </div>
+          <!--        <div class="col align-self-center">-->
+          <!--          <button type="submit" id="register_button" class="mt-4 btn btn-primary">Register</button>-->
+          <!--          <button type="submit" id="register_button" class="mt-4 btn btn-default">Cancel</button>-->
+          <!--        </div>-->
         </div>
-<!--        <div class="col align-self-center">-->
-<!--          <button type="submit" id="register_button" class="mt-4 btn btn-primary">Register</button>-->
-<!--          <button type="submit" id="register_button" class="mt-4 btn btn-default">Cancel</button>-->
-<!--        </div>-->
       </div>
     </Form>
   </div>
+  </div>
+
 </template>
 
 <script>
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import axios from "axios";
-import { Form, Field } from 'vee-validate';
+import {Form, Field} from 'vee-validate';
 import * as Yup from 'yup';
-import { toast } from "vue3-toastify";
+import {toast} from "vue3-toastify";
 import 'vue3-toastify/dist/index.css'
 
 export default {
@@ -147,7 +165,7 @@ export default {
           autoClose: 40000,
         });
         // this.$router.push("/");
-      }else {
+      } else {
         toast.error("Register is error", {
           autoClose: 40000
         })
@@ -170,12 +188,15 @@ export default {
   padding: 4rem 4rem;
   border-radius: 5px;
 }
+
 .regist-member {
   padding-top: 20%;
 }
+
 #btn-cancel {
   margin-left: 1rem;
 }
+
 #btn-regist, #btn-cancel {
   padding: 0.3rem 2rem;
 }

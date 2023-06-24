@@ -16,7 +16,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li className="nav-item">
-            <router-link to="/dashboard" class="nav-link">
+            <router-link to="/admin/dashboard" class="nav-link">
               <i className="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </router-link>
@@ -34,13 +34,13 @@
 <!--            </router-link>-->
             <ul className="nav nav-treeview">
               <li className="nav-item">
-                <router-link to="/user" class="nav-link">
+                <router-link to="/admin/user" class="nav-link">
                   <i className="far fa-circle nav-icon"></i>
                   <p>List Member</p>
                 </router-link>
               </li>
               <li className="nav-item">
-                <router-link to="/user/regist" class="nav-link">
+                <router-link to="/admin/user/regist" class="nav-link">
                   <i className="far fa-circle nav-icon"></i>
                   <p>Regist Member</p>
                 </router-link>

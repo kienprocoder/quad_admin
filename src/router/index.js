@@ -3,7 +3,7 @@ import LoginView from "../views/LoginView.vue";
 import HomeView from "../views/HomeView.vue";
 import { getAuth } from "firebase/auth";
 import DashboardView from "../views/DashboardView.vue"
-import UserView from "../views/UserView.vue";
+import ListMember from "../views/user/UserListComponent.vue";
 import RegistMember from "../views/user/UserAddComponent.vue";
 import PageNotFound from "../component/404.vue"
 
@@ -25,20 +25,20 @@ const routes = [
 		component: PageNotFound
 	},
 	{
-		path: "/dashboard",
+		path: "/admin/dashboard",
 		name: "home",
 		component: HomeView,
 		children: [
 			{
-				path:"/dashboard",
+				path:"/admin/dashboard",
 				component: DashboardView
 			},
 			{
-				path:"/user",
-				component: UserView
+				path:"/admin/user",
+				component: ListMember
 			},
 			{
-				path: "/user/regist",
+				path: "/admin/user/regist",
 				component: RegistMember
 			}
 		]
@@ -49,7 +49,7 @@ const routes = [
 		// },
 	},
 	{
-		path: "/dashboard",
+		path: "/admin/dashboard",
 		name: "dashboard",
 		component: () =>
 			import("../views/Dashboard.vue")
