@@ -68,7 +68,7 @@ export default {
 
         if (getRole === "[ROLE_ADMIN]") {
           localStorage.setItem('token', response.data.data.accessToken);
-          this.$router.push("/dashboard");
+          this.$router.push("/admin/dashboard");
         }else {
           toast.error("Account does not have permission to login", {
             autoClose: 3000

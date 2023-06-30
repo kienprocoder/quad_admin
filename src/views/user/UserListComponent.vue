@@ -87,7 +87,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div class="card">
+          <div class="card" style="margin-bottom: 5rem">
             <div class="card-body">
               <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                 <div class="row">
@@ -244,7 +244,6 @@
     <!-- /.container-fluid -->
   </section>
   <!-- /.content -->
-
 </template>
 
 <script>

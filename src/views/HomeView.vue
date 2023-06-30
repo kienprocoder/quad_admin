@@ -1,29 +1,25 @@
 <template>
-  <div>
-    <Sidebar/>
-  </div>
-  <div>
-    <Header></Header>
-  </div>
-
+  <div class="wrapper">
+  <Sidebar/>
+  <Header></Header>
   <div class="content-wrapper">
     <router-view/>
   </div>
-
-<!--  <Footer/>-->
+  <Footer/>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 import Sidebar from "@/component/Sidebar.vue";
 import Header from "@/component/Header.vue";
-// import Footer from "@/component/Footer.vue";
+import Footer from "@/component/Footer.vue";
 export default ({
   name: "Home",
   components: {
     Sidebar,
     Header,
-    // Footer,
+    Footer,
   },
   data() {
     return {

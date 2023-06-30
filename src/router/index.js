@@ -48,12 +48,6 @@ const routes = [
 		// 	authRequired: true,
 		// },
 	},
-	{
-		path: "/admin/dashboard",
-		name: "dashboard",
-		component: () =>
-			import("../views/Dashboard.vue")
-	}
 ];
 
 const router = createRouter({
